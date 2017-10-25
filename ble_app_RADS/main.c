@@ -1,5 +1,5 @@
 /**
- * RADS is ultra COOL
+ * RADS is very ultra COOL
  * Copyright (c) 2014 - 2017, Nordic Semiconductor ASA
  * 
  * All rights reserved.
