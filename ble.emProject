@@ -74,6 +74,8 @@
       <file file_name="$(SDK_Path)/components/drivers_nrf/common/nrf_drv_common.c" />
       <file file_name="$(SDK_Path)/components/drivers_nrf/gpiote/nrf_drv_gpiote.c" />
       <file file_name="$(SDK_Path)/components/drivers_nrf/uart/nrf_drv_uart.c" />
+      <file file_name="$(SDK_Path)/components/libraries/spi_mngr/nrf_spi_mngr.c" />
+      <file file_name="$(SDK_Path)/components/drivers_nrf/spi_master/nrf_drv_spi.c" />
     </folder>
     <folder Name="Board Support">
       <file file_name="$(SDK_Path)/components/libraries/bsp/bsp.c" />

@@ -1,5 +1,5 @@
-Output/ble\ Debug/Obj/nrf_log_backend_uart.o: \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/experimental_log/src/nrf_log_backend_uart.c \
+Output/ble\ Debug/Obj/nrf_spi_mngr.o: \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/spi_mngr/nrf_spi_mngr.c \
  D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/sdk_common.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 3.30/include/stdint.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 3.30/include/stdbool.h \

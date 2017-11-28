@@ -47,4 +47,4 @@ Output/ble\ Debug/Obj/nrf_log_default_backends.o: \
  D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/app_util.h \
  D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/experimental_log/src/nrf_log_internal.h \
  D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/nrf_assert.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/experimental_log/nrf_log_backend_uart.h
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/experimental_log/nrf_log_backend_rtt.h

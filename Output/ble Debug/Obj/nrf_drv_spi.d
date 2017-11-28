@@ -1,5 +1,5 @@
-Output/ble\ Debug/Obj/nrf_log_backend_rtt.o: \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/experimental_log/src/nrf_log_backend_rtt.c \
+Output/ble\ Debug/Obj/nrf_drv_spi.o: \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/drivers_nrf/spi_master/nrf_drv_spi.c \
  D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/sdk_common.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 3.30/include/stdint.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 3.30/include/stdbool.h \
@@ -26,12 +26,21 @@ Output/ble\ Debug/Obj/nrf_log_backend_rtt.o: \
  D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/device/nrf52_name_change.h \
  D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/device/compiler_abstraction.h \
  D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/sdk_macros.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/experimental_log/nrf_log_backend_rtt.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/experimental_log/nrf_log_backend_interface.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/experimental_memobj/nrf_memobj.h \
- C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 3.30/include/stdlib.h \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/drivers_nrf/spi_master/nrf_drv_spi.h \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/nordic_common.h \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/drivers_nrf/hal/nrf_peripherals.h \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/device/nrf52832_peripherals.h \
  D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/sdk_errors.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/balloc/nrf_balloc.h \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/drivers_nrf/hal/nrf_spi.h \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/drivers_nrf/hal/nrf_peripherals.h \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/drivers_nrf/hal/nrf_spim.h \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/drivers_nrf/common/nrf_drv_common.h \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/nrf_assert.h \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/app_error.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 3.30/include/stdio.h \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/app_error_weak.h \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/drivers_nrf/hal/nrf_gpio.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 3.30/include/stdlib.h \
  D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/app_util_platform.h \
  D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/softdevice/s132/headers/nrf_soc.h \
  D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/softdevice/s132/headers/nrf_svc.h \
@@ -39,18 +48,8 @@ Output/ble\ Debug/Obj/nrf_log_backend_rtt.o: \
  D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/softdevice/s132/headers/nrf_error.h \
  D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/softdevice/s132/headers/nrf_nvic.h \
  D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/nrf_assert.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/app_error.h \
- C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ 3.30/include/stdio.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/app_error_weak.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/app_util.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/experimental_log/src/nrf_log_backend_serial.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/experimental_log/nrf_log_backend_interface.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/external/fprintf/nrf_fprintf.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/experimental_log/nrf_log_str_formatter.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/experimental_log/nrf_log_ctrl.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/experimental_log/src/nrf_log_ctrl_internal.h \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/experimental_log/nrf_log.h \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/experimental_section_vars/nrf_section.h \
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/strerror/nrf_strerror.h \
  D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/experimental_log/src/nrf_log_internal.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/external/segger_rtt/SEGGER_RTT_Conf.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/nordic_common.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/external/segger_rtt/SEGGER_RTT.h \
- D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/external/segger_rtt/SEGGER_RTT_Conf.h
+ D:\Nordic_semi\nRF5_SDK_14.1.0_1dda907/components/libraries/util/app_util.h

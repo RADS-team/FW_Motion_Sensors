@@ -33,6 +33,8 @@
 "Output/ble Debug/Obj/nrf_drv_common.o"
 "Output/ble Debug/Obj/nrf_drv_gpiote.o"
 "Output/ble Debug/Obj/nrf_drv_uart.o"
+"Output/ble Debug/Obj/nrf_spi_mngr.o"
+"Output/ble Debug/Obj/nrf_drv_spi.o"
 "Output/ble Debug/Obj/bsp.o"
 "Output/ble Debug/Obj/bsp_btn_ble.o"
 "Output/ble Debug/Obj/bsp_nfc.o"

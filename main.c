@@ -55,6 +55,7 @@
 #include <stdint.h>
 #include <string.h>
 
+#include "nrf_drv_spi.h"
 #include "nordic_common.h"
 #include "nrf.h"
 #include "app_error.h"
@@ -78,6 +79,9 @@
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"
+
+#include "nrf_delay.h"
+#include "app_util_platform.h"
 
 
 #define APP_FEATURE_NOT_SUPPORTED       BLE_GATT_STATUS_ATTERR_APP_BEGIN + 2    /**< Reply when unsupported features are requested. */
@@ -776,11 +780,50 @@ static void advertising_start(bool erase_bonds)
     }
 }
 
+/* =============== SPI =============== */
+
+static const nrf_drv_spi_t m_spi_master_0 = NRF_DRV_SPI_INSTANCE(0);
+static volatile bool spi_xfer_done;  /**< Flag used to indicate that SPI instance completed the transfer. */
+
+/**
+ * @brief SPI user event handler.
+ * @param event
+ */
+void spi_event_handler(nrf_drv_spi_evt_t const * p_event,
+                       void *                    p_context)
+{
+    spi_xfer_done = true;
+    NRF_LOG_INFO("Transfer completed.");
+    /*if (m_rx_buf[0] != 0)
+    {
+        NRF_LOG_INFO(" Received:");
+        NRF_LOG_HEXDUMP_INFO(m_rx_buf, strlen((const char *)m_rx_buf));
+    }*/
+}
+
+static void init_spi(void) 
+{
+  NRF_LOG_INFO("SPI Initialisation");
+  nrf_drv_spi_config_t spi_config = NRF_DRV_SPI_DEFAULT_CONFIG;
+  spi_config.frequency = NRF_DRV_SPI_FREQ_1M;
+  spi_config.mode      = NRF_DRV_SPI_MODE_0; // rising clk, data transitioned on the falling edge
+  spi_config.bit_order = NRF_DRV_SPI_BIT_ORDER_MSB_FIRST;
+
+  spi_config.ss_pin   = SPI_SS_PIN;
+  spi_config.miso_pin = SPI_MISO_PIN;
+  spi_config.mosi_pin = SPI_MOSI_PIN;
+  spi_config.sck_pin  = SPI_SCK_PIN;
+  APP_ERROR_CHECK(nrf_drv_spi_init(&m_spi_master_0, &spi_config, spi_event_handler, NULL));
+  NRF_LOG_INFO("SPI Initialised");
+}
+
+/* =================================== */
 
 /**@brief Function for application main entry.
  */
 int main(void)
 {
+    bsp_board_leds_init();
     bool erase_bonds;
 
     // Initialize.
@@ -801,13 +844,14 @@ int main(void)
 
     advertising_start(erase_bonds);
 
+    init_spi();
     // Enter main loop.
     for (;;)
     {
-        if (NRF_LOG_PROCESS() == false)
-        {
-            power_manage();
-        }
+      NRF_LOG_FLUSH();
+
+      bsp_board_led_invert(BSP_BOARD_LED_0);
+      nrf_delay_ms(200);
     }
 }
 
