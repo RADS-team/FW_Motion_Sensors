@@ -15,8 +15,8 @@
       arm_simulator_memory_simulation_parameter="RWX 00000000,00100000,FFFFFFFF;RWX 20000000,00010000,CDCDCDCD"
       arm_target_device_name="nRF52832_xxAA"
       arm_target_interface_type="SWD"
-      c_preprocessor_definitions="BOARD_PCA10040;CONFIG_GPIO_AS_PINRESET;INITIALIZE_USER_SECTIONS;NO_VTOR_CONFIG;NRF52;NRF52832_XXAA;NRF52_PAN_74;NRF_SD_BLE_API_VERSION=5;S132;SOFTDEVICE_PRESENT;SWI_DISABLE0;"
-      c_user_include_directories="./config;$(SDK_Path)/components;$(SDK_Path)/components/ble/ble_advertising;$(SDK_Path)/components/ble/ble_dtm;$(SDK_Path)/components/ble/ble_racp;$(SDK_Path)/components/ble/ble_services/ble_ancs_c;$(SDK_Path)/components/ble/ble_services/ble_ans_c;$(SDK_Path)/components/ble/ble_services/ble_bas;$(SDK_Path)/components/ble/ble_services/ble_bas_c;$(SDK_Path)/components/ble/ble_services/ble_cscs;$(SDK_Path)/components/ble/ble_services/ble_cts_c;$(SDK_Path)/components/ble/ble_services/ble_dfu;$(SDK_Path)/components/ble/ble_services/ble_dis;$(SDK_Path)/components/ble/ble_services/ble_gls;$(SDK_Path)/components/ble/ble_services/ble_hids;$(SDK_Path)/components/ble/ble_services/ble_hrs;$(SDK_Path)/components/ble/ble_services/ble_hrs_c;$(SDK_Path)/components/ble/ble_services/ble_hts;$(SDK_Path)/components/ble/ble_services/ble_ias;$(SDK_Path)/components/ble/ble_services/ble_ias_c;$(SDK_Path)/components/ble/ble_services/ble_lbs;$(SDK_Path)/components/ble/ble_services/ble_lbs_c;$(SDK_Path)/components/ble/ble_services/ble_lls;$(SDK_Path)/components/ble/ble_services/ble_nus;$(SDK_Path)/components/ble/ble_services/ble_nus_c;$(SDK_Path)/components/ble/ble_services/ble_rscs;$(SDK_Path)/components/ble/ble_services/ble_rscs_c;$(SDK_Path)/components/ble/ble_services/ble_tps;$(SDK_Path)/components/ble/common;$(SDK_Path)/components/ble/nrf_ble_gatt;$(SDK_Path)/components/ble/nrf_ble_qwr;$(SDK_Path)/components/ble/peer_manager;$(SDK_Path)/components/boards;$(SDK_Path)/components/device;$(SDK_Path)/components/drivers_nrf/clock;$(SDK_Path)/components/drivers_nrf/common;$(SDK_Path)/components/drivers_nrf/comp;$(SDK_Path)/components/drivers_nrf/delay;$(SDK_Path)/components/drivers_nrf/gpiote;$(SDK_Path)/components/drivers_nrf/hal;$(SDK_Path)/components/drivers_nrf/i2s;$(SDK_Path)/components/drivers_nrf/lpcomp;$(SDK_Path)/components/drivers_nrf/pdm;$(SDK_Path)/components/drivers_nrf/power;$(SDK_Path)/components/drivers_nrf/ppi;$(SDK_Path)/components/drivers_nrf/pwm;$(SDK_Path)/components/drivers_nrf/qdec;$(SDK_Path)/components/drivers_nrf/rng;$(SDK_Path)/components/drivers_nrf/rtc;$(SDK_Path)/components/drivers_nrf/saadc;$(SDK_Path)/components/drivers_nrf/spi_master;$(SDK_Path)/components/drivers_nrf/spi_slave;$(SDK_Path)/components/drivers_nrf/swi;$(SDK_Path)/components/drivers_nrf/timer;$(SDK_Path)/components/drivers_nrf/twi_master;$(SDK_Path)/components/drivers_nrf/twis_slave;$(SDK_Path)/components/drivers_nrf/uart;$(SDK_Path)/components/drivers_nrf/usbd;$(SDK_Path)/components/drivers_nrf/wdt;$(SDK_Path)/components/libraries/atomic;$(SDK_Path)/components/libraries/atomic_fifo;$(SDK_Path)/components/libraries/balloc;$(SDK_Path)/components/libraries/bsp;$(SDK_Path)/components/libraries/button;$(SDK_Path)/components/libraries/cli;$(SDK_Path)/components/libraries/crc16;$(SDK_Path)/components/libraries/crc32;$(SDK_Path)/components/libraries/csense;$(SDK_Path)/components/libraries/csense_drv;$(SDK_Path)/components/libraries/ecc;$(SDK_Path)/components/libraries/experimental_log;$(SDK_Path)/components/libraries/experimental_log/src;$(SDK_Path)/components/libraries/experimental_memobj;$(SDK_Path)/components/libraries/experimental_section_vars;$(SDK_Path)/components/libraries/fds;$(SDK_Path)/components/libraries/fstorage;$(SDK_Path)/components/libraries/gpiote;$(SDK_Path)/components/libraries/hardfault;$(SDK_Path)/components/libraries/hci;$(SDK_Path)/components/libraries/led_softblink;$(SDK_Path)/components/libraries/low_power_pwm;$(SDK_Path)/components/libraries/mem_manager;$(SDK_Path)/components/libraries/mutex;$(SDK_Path)/components/libraries/pwm;$(SDK_Path)/components/libraries/pwr_mgmt;$(SDK_Path)/components/libraries/queue;$(SDK_Path)/components/libraries/scheduler;$(SDK_Path)/components/libraries/sensorsim;$(SDK_Path)/components/libraries/slip;$(SDK_Path)/components/libraries/strerror;$(SDK_Path)/components/libraries/timer;$(SDK_Path)/components/libraries/twi;$(SDK_Path)/components/libraries/twi_mngr;$(SDK_Path)/components/libraries/uart;$(SDK_Path)/components/libraries/usbd;$(SDK_Path)/components/libraries/usbd/class/audio;$(SDK_Path)/components/libraries/usbd/class/cdc;$(SDK_Path)/components/libraries/usbd/class/cdc/acm;$(SDK_Path)/components/libraries/usbd/class/hid;$(SDK_Path)/components/libraries/usbd/class/hid/generic;$(SDK_Path)/components/libraries/usbd/class/hid/kbd;$(SDK_Path)/components/libraries/usbd/class/hid/mouse;$(SDK_Path)/components/libraries/usbd/class/msc;$(SDK_Path)/components/libraries/usbd/config;$(SDK_Path)/components/libraries/util;$(SDK_Path)/components/softdevice/common;$(SDK_Path)/components/softdevice/s132/headers;$(SDK_Path)/components/softdevice/s132/headers/nrf52;$(SDK_Path)/components/toolchain;$(SDK_Path)/components/toolchain/cmsis/include;$(SDK_Path)/external/fprintf;$(SDK_Path)/external/segger_rtt;../config"
+      c_preprocessor_definitions="BOARD_PCA10040;CONFIG_GPIO_AS_PINRESET;INITIALIZE_USER_SECTIONS;NO_VTOR_CONFIG;NRF52;NRF52832_XXAA;NRF52_PAN_74;NRF_SD_BLE_API_VERSION=5;S132;SOFTDEVICE_PRESENT;SWI_DISABLE0;INV_MSG_ENABLE"
+      c_user_include_directories="./config;$(SDK_Path)/components;$(SDK_Path)/components/ble/ble_advertising;$(SDK_Path)/components/ble/ble_dtm;$(SDK_Path)/components/ble/ble_racp;$(SDK_Path)/components/ble/ble_services/ble_ancs_c;$(SDK_Path)/components/ble/ble_services/ble_ans_c;$(SDK_Path)/components/ble/ble_services/ble_bas;$(SDK_Path)/components/ble/ble_services/ble_bas_c;$(SDK_Path)/components/ble/ble_services/ble_cscs;$(SDK_Path)/components/ble/ble_services/ble_cts_c;$(SDK_Path)/components/ble/ble_services/ble_dfu;$(SDK_Path)/components/ble/ble_services/ble_dis;$(SDK_Path)/components/ble/ble_services/ble_gls;$(SDK_Path)/components/ble/ble_services/ble_hids;$(SDK_Path)/components/ble/ble_services/ble_hrs;$(SDK_Path)/components/ble/ble_services/ble_hrs_c;$(SDK_Path)/components/ble/ble_services/ble_hts;$(SDK_Path)/components/ble/ble_services/ble_ias;$(SDK_Path)/components/ble/ble_services/ble_ias_c;$(SDK_Path)/components/ble/ble_services/ble_lbs;$(SDK_Path)/components/ble/ble_services/ble_lbs_c;$(SDK_Path)/components/ble/ble_services/ble_lls;$(SDK_Path)/components/ble/ble_services/ble_nus;$(SDK_Path)/components/ble/ble_services/ble_nus_c;$(SDK_Path)/components/ble/ble_services/ble_rscs;$(SDK_Path)/components/ble/ble_services/ble_rscs_c;$(SDK_Path)/components/ble/ble_services/ble_tps;$(SDK_Path)/components/ble/common;$(SDK_Path)/components/ble/nrf_ble_gatt;$(SDK_Path)/components/ble/nrf_ble_qwr;$(SDK_Path)/components/ble/peer_manager;$(SDK_Path)/components/boards;$(SDK_Path)/components/device;$(SDK_Path)/components/drivers_nrf/clock;$(SDK_Path)/components/drivers_nrf/common;$(SDK_Path)/components/drivers_nrf/comp;$(SDK_Path)/components/drivers_nrf/delay;$(SDK_Path)/components/drivers_nrf/gpiote;$(SDK_Path)/components/drivers_nrf/hal;$(SDK_Path)/components/drivers_nrf/i2s;$(SDK_Path)/components/drivers_nrf/lpcomp;$(SDK_Path)/components/drivers_nrf/pdm;$(SDK_Path)/components/drivers_nrf/power;$(SDK_Path)/components/drivers_nrf/ppi;$(SDK_Path)/components/drivers_nrf/pwm;$(SDK_Path)/components/drivers_nrf/qdec;$(SDK_Path)/components/drivers_nrf/rng;$(SDK_Path)/components/drivers_nrf/rtc;$(SDK_Path)/components/drivers_nrf/saadc;$(SDK_Path)/components/drivers_nrf/spi_master;$(SDK_Path)/components/drivers_nrf/spi_slave;$(SDK_Path)/components/drivers_nrf/swi;$(SDK_Path)/components/drivers_nrf/timer;$(SDK_Path)/components/drivers_nrf/twi_master;$(SDK_Path)/components/drivers_nrf/twis_slave;$(SDK_Path)/components/drivers_nrf/uart;$(SDK_Path)/components/drivers_nrf/usbd;$(SDK_Path)/components/drivers_nrf/wdt;$(SDK_Path)/components/libraries/atomic;$(SDK_Path)/components/libraries/atomic_fifo;$(SDK_Path)/components/libraries/balloc;$(SDK_Path)/components/libraries/bsp;$(SDK_Path)/components/libraries/button;$(SDK_Path)/components/libraries/cli;$(SDK_Path)/components/libraries/crc16;$(SDK_Path)/components/libraries/crc32;$(SDK_Path)/components/libraries/csense;$(SDK_Path)/components/libraries/csense_drv;$(SDK_Path)/components/libraries/ecc;$(SDK_Path)/components/libraries/experimental_log;$(SDK_Path)/components/libraries/experimental_log/src;$(SDK_Path)/components/libraries/experimental_memobj;$(SDK_Path)/components/libraries/experimental_section_vars;$(SDK_Path)/components/libraries/fds;$(SDK_Path)/components/libraries/fstorage;$(SDK_Path)/components/libraries/gpiote;$(SDK_Path)/components/libraries/hardfault;$(SDK_Path)/components/libraries/hci;$(SDK_Path)/components/libraries/led_softblink;$(SDK_Path)/components/libraries/low_power_pwm;$(SDK_Path)/components/libraries/mem_manager;$(SDK_Path)/components/libraries/mutex;$(SDK_Path)/components/libraries/pwm;$(SDK_Path)/components/libraries/pwr_mgmt;$(SDK_Path)/components/libraries/queue;$(SDK_Path)/components/libraries/scheduler;$(SDK_Path)/components/libraries/sensorsim;$(SDK_Path)/components/libraries/slip;$(SDK_Path)/components/libraries/strerror;$(SDK_Path)/components/libraries/timer;$(SDK_Path)/components/libraries/twi;$(SDK_Path)/components/libraries/twi_mngr;$(SDK_Path)/components/libraries/uart;$(SDK_Path)/components/libraries/usbd;$(SDK_Path)/components/libraries/usbd/class/audio;$(SDK_Path)/components/libraries/usbd/class/cdc;$(SDK_Path)/components/libraries/usbd/class/cdc/acm;$(SDK_Path)/components/libraries/usbd/class/hid;$(SDK_Path)/components/libraries/usbd/class/hid/generic;$(SDK_Path)/components/libraries/usbd/class/hid/kbd;$(SDK_Path)/components/libraries/usbd/class/hid/mouse;$(SDK_Path)/components/libraries/usbd/class/msc;$(SDK_Path)/components/libraries/usbd/config;$(SDK_Path)/components/libraries/util;$(SDK_Path)/components/softdevice/common;$(SDK_Path)/components/softdevice/s132/headers;$(SDK_Path)/components/softdevice/s132/headers/nrf52;$(SDK_Path)/components/toolchain;$(SDK_Path)/components/toolchain/cmsis/include;$(SDK_Path)/external/fprintf;$(SDK_Path)/external/segger_rtt;../config;$(FW_Dir_Path)/"
       debug_additional_load_file="$(SDK_Path)/components/softdevice/s132/hex/s132_nrf52_5.0.0_softdevice.hex"
       debug_register_definition_file="$(SDK_Path)/svd/nrf52.svd"
       debug_start_from_entry_point_symbol="No"
@@ -74,8 +74,13 @@
       <file file_name="$(SDK_Path)/components/drivers_nrf/common/nrf_drv_common.c" />
       <file file_name="$(SDK_Path)/components/drivers_nrf/gpiote/nrf_drv_gpiote.c" />
       <file file_name="$(SDK_Path)/components/drivers_nrf/uart/nrf_drv_uart.c" />
+<<<<<<< HEAD
       <file file_name="$(SDK_Path)/components/libraries/spi_mngr/nrf_spi_mngr.c" />
       <file file_name="$(SDK_Path)/components/drivers_nrf/spi_master/nrf_drv_spi.c" />
+=======
+      <file file_name="/Nordic_semi/nRF5_SDK_14.1.0_1dda907/components/drivers_nrf/timer/nrf_drv_timer.c" />
+      <file file_name="/Nordic_semi/nRF5_SDK_14.1.0_1dda907/components/drivers_nrf/spi_master/nrf_drv_spi.c" />
+>>>>>>> b2481f29d624a36977dd7e8740e39be7f7860609
     </folder>
     <folder Name="Board Support">
       <file file_name="$(SDK_Path)/components/libraries/bsp/bsp.c" />
@@ -83,7 +88,9 @@
       <file file_name="$(SDK_Path)/components/libraries/bsp/bsp_nfc.c" />
     </folder>
     <folder Name="Application">
-      <file file_name="./main.c" />
+      <file file_name="./main.c">
+        <configuration Name="Common" c_user_include_directories="." />
+      </file>
       <file file_name="./config/sdk_config.h" />
     </folder>
     <folder Name="nRF_Segger_RTT">
@@ -120,6 +127,55 @@
       <file file_name="$(SDK_Path)/components/softdevice/common/nrf_sdh_ble.c" />
       <file file_name="$(SDK_Path)/components/softdevice/common/nrf_sdh_soc.c" />
     </folder>
+    <folder Name="Invn">
+      <folder Name="Devices">
+        <file file_name="../Invn/Devices/DeviceIcm20948.c" />
+        <file file_name="../Invn/Devices/HostSerif.c" />
+        <file file_name="../Invn/Devices/Sensor.c" />
+        <file file_name="../Invn/Devices/VSensorId.c" />
+        <folder Name="Driver">
+          <folder Name="Icm20948">
+            <file file_name="../Invn/Devices/Drivers/Icm20948/Icm20948Augmented.c" />
+            <file file_name="../Invn/Devices/Drivers/Icm20948/Icm20948AuxCompassAkm.c" />
+            <file file_name="../Invn/Devices/Drivers/Icm20948/Icm20948AuxTransport.c" />
+            <file file_name="../Invn/Devices/Drivers/Icm20948/Icm20948DataBaseControl.c" />
+            <file file_name="../Invn/Devices/Drivers/Icm20948/Icm20948DataBaseDriver.c" />
+            <file file_name="../Invn/Devices/Drivers/Icm20948/Icm20948DataConverter.c" />
+            <file file_name="../Invn/Devices/Drivers/Icm20948/Icm20948Dmp3Driver.c" />
+            <file file_name="../Invn/Devices/Drivers/Icm20948/Icm20948LoadFirmware.c" />
+            <file file_name="../Invn/Devices/Drivers/Icm20948/Icm20948MPUFifoControl.c" />
+            <file file_name="../Invn/Devices/Drivers/Icm20948/Icm20948SelfTest.c" />
+            <file file_name="../Invn/Devices/Drivers/Icm20948/Icm20948Setup.c" />
+            <file file_name="../Invn/Devices/Drivers/Icm20948/Icm20948Transport.c" />
+          </folder>
+        </folder>
+        <file file_name="HostSerifImpl.c" />
+        <file file_name="HostSerifImpl.h" />
+      </folder>
+      <folder Name="DynamicProtocol">
+        <file file_name="../Invn/DynamicProtocol/DynProtocol.c" />
+        <file file_name="../Invn/DynamicProtocol/DynProtocolTransportUart.c" />
+      </folder>
+      <folder Name="EmbUtils">
+        <file file_name="../Invn/EmbUtils/DataConverter.c" />
+        <file file_name="../Invn/EmbUtils/ErrorHelper.c" />
+        <file file_name="../Invn/EmbUtils/InvBasicMath.c" />
+        <file file_name="../Invn/EmbUtils/InvCksum.c" />
+        <file file_name="../Invn/EmbUtils/InvFormat.c" />
+        <file file_name="../Invn/EmbUtils/InvList.c" />
+        <file file_name="../Invn/EmbUtils/InvPrintf.c" />
+        <file file_name="../Invn/EmbUtils/InvProtocol.c" />
+        <file file_name="../Invn/EmbUtils/InvQueue.c" />
+        <file file_name="../Invn/EmbUtils/InvScheduler.c" />
+        <file file_name="../Invn/EmbUtils/Logger.c" />
+        <file file_name="../Invn/EmbUtils/Message.c" />
+        <file file_name="../Invn/EmbUtils/RingByteBuffer.c" />
+        <file file_name="../Invn/EmbUtils/UartTxEmulator.c" />
+      </folder>
+      <folder Name="VSensor">
+        <file file_name="../Invn/VSensor/VSensor.c" />
+      </folder>
+    </folder>
   </project>
   <configuration
     Name="Release"
@@ -131,5 +187,6 @@
     Name="Debug"
     c_preprocessor_definitions="DEBUG; DEBUG_NRF"
     gcc_debugging_level="Level 3"
-    gcc_optimization_level="None" />
+    gcc_optimization_level="None"
+    linker_printf_fp_enabled="Float" />
 </solution>

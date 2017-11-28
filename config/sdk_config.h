@@ -1719,12 +1719,189 @@
 #define SPI0_USE_EASY_DMA 0
 #endif
 
+//==========================================================
+// <h> SPI0_CONFIGURATION - Spi configuration
+
+//==========================================================
+// <o> SPI0_SCK_PIN  - Pin number
+
+// <0=> 0 (P0.0) 
+// <1=> 1 (P0.1) 
+// <2=> 2 (P0.2) 
+// <3=> 3 (P0.3) 
+// <4=> 4 (P0.4) 
+// <5=> 5 (P0.5) 
+// <6=> 6 (P0.6) 
+// <7=> 7 (P0.7) 
+// <8=> 8 (P0.8) 
+// <9=> 9 (P0.9) 
+// <10=> 10 (P0.10) 
+// <11=> 11 (P0.11) 
+// <12=> 12 (P0.12) 
+// <13=> 13 (P0.13) 
+// <14=> 14 (P0.14) 
+// <15=> 15 (P0.15) 
+// <16=> 16 (P0.16) 
+// <17=> 17 (P0.17) 
+// <18=> 18 (P0.18) 
+// <19=> 19 (P0.19) 
+// <20=> 20 (P0.20) 
+// <21=> 21 (P0.21) 
+// <22=> 22 (P0.22) 
+// <23=> 23 (P0.23) 
+// <24=> 24 (P0.24) 
+// <25=> 25 (P0.25) 
+// <26=> 26 (P0.26) 
+// <27=> 27 (P0.27) 
+// <28=> 28 (P0.28) 
+// <29=> 29 (P0.29) 
+// <30=> 30 (P0.30) 
+// <31=> 31 (P0.31) 
+// <4294967295=> Not connected
+
+#ifndef SPI0_CONFIG_SCK_PIN
+#define SPI0_CONFIG_SCK_PIN         2
+#endif
+// <o> SPI0_MOSI_PIN  - Pin number
+
+// <0=> 0 (P0.0) 
+// <1=> 1 (P0.1) 
+// <2=> 2 (P0.2) 
+// <3=> 3 (P0.3) 
+// <4=> 4 (P0.4) 
+// <5=> 5 (P0.5) 
+// <6=> 6 (P0.6) 
+// <7=> 7 (P0.7) 
+// <8=> 8 (P0.8) 
+// <9=> 9 (P0.9) 
+// <10=> 10 (P0.10) 
+// <11=> 11 (P0.11) 
+// <12=> 12 (P0.12) 
+// <13=> 13 (P0.13) 
+// <14=> 14 (P0.14) 
+// <15=> 15 (P0.15) 
+// <16=> 16 (P0.16) 
+// <17=> 17 (P0.17) 
+// <18=> 18 (P0.18) 
+// <19=> 19 (P0.19) 
+// <20=> 20 (P0.20) 
+// <21=> 21 (P0.21) 
+// <22=> 22 (P0.22) 
+// <23=> 23 (P0.23) 
+// <24=> 24 (P0.24) 
+// <25=> 25 (P0.25) 
+// <26=> 26 (P0.26) 
+// <27=> 27 (P0.27) 
+// <28=> 28 (P0.28) 
+// <29=> 29 (P0.29) 
+// <30=> 30 (P0.30) 
+// <31=> 31 (P0.31) 
+// <4294967295=> Not connected
+
+#ifndef SPI0_CONFIG_MOSI_PIN
+#define SPI0_CONFIG_MOSI_PIN        3
+#endif
+// <o> SPI0_MISO_PIN  - Pin number
+
+// <0=> 0 (P0.0) 
+// <1=> 1 (P0.1) 
+// <2=> 2 (P0.2) 
+// <3=> 3 (P0.3) 
+// <4=> 4 (P0.4) 
+// <5=> 5 (P0.5) 
+// <6=> 6 (P0.6) 
+// <7=> 7 (P0.7) 
+// <8=> 8 (P0.8) 
+// <9=> 9 (P0.9) 
+// <10=> 10 (P0.10) 
+// <11=> 11 (P0.11) 
+// <12=> 12 (P0.12) 
+// <13=> 13 (P0.13) 
+// <14=> 14 (P0.14) 
+// <15=> 15 (P0.15) 
+// <16=> 16 (P0.16) 
+// <17=> 17 (P0.17) 
+// <18=> 18 (P0.18) 
+// <19=> 19 (P0.19) 
+// <20=> 20 (P0.20) 
+// <21=> 21 (P0.21) 
+// <22=> 22 (P0.22) 
+// <23=> 23 (P0.23) 
+// <24=> 24 (P0.24) 
+// <25=> 25 (P0.25) 
+// <26=> 26 (P0.26) 
+// <27=> 27 (P0.27) 
+// <28=> 28 (P0.28) 
+// <29=> 29 (P0.29) 
+// <30=> 30 (P0.30) 
+// <31=> 31 (P0.31) 
+// <4294967295=> Not connected
+
+#ifndef SPI0_CONFIG_MISO_PIN
+#define SPI0_CONFIG_MISO_PIN        4
+#endif
+// <o> SPI0_SS_PIN  - Pin number
+
+// <0=> 0 (P0.0) 
+// <1=> 1 (P0.1) 
+// <2=> 2 (P0.2) 
+// <3=> 3 (P0.3) 
+// <4=> 4 (P0.4) 
+// <5=> 5 (P0.5) 
+// <6=> 6 (P0.6) 
+// <7=> 7 (P0.7) 
+// <8=> 8 (P0.8) 
+// <9=> 9 (P0.9) 
+// <10=> 10 (P0.10) 
+// <11=> 11 (P0.11) 
+// <12=> 12 (P0.12) 
+// <13=> 13 (P0.13) 
+// <14=> 14 (P0.14) 
+// <15=> 15 (P0.15) 
+// <16=> 16 (P0.16) 
+// <17=> 17 (P0.17) 
+// <18=> 18 (P0.18) 
+// <19=> 19 (P0.19) 
+// <20=> 20 (P0.20) 
+// <21=> 21 (P0.21) 
+// <22=> 22 (P0.22) 
+// <23=> 23 (P0.23) 
+// <24=> 24 (P0.24) 
+// <25=> 25 (P0.25) 
+// <26=> 26 (P0.26) 
+// <27=> 27 (P0.27) 
+// <28=> 28 (P0.28) 
+// <29=> 29 (P0.29) 
+// <30=> 30 (P0.30) 
+// <31=> 31 (P0.31) 
+// <4294967295=> Not connected
+
+#ifndef SPI0_CONFIG_SS_PIN
+#define SPI0_CONFIG_SS_PIN          5
+#endif
+// <o> SPI0_IRQ_PRIORITY  - Interrupt priority
+// <i> Priorities 0,2 (nRF51) and 0,1,4,5 (nRF52) are reserved for SoftDevice
+// <0=> 0 (highest) 
+// <1=> 1 
+// <2=> 2 
+// <3=> 3 
+// <4=> 4 
+// <5=> 5 
+// <6=> 6 
+// <7=> 7 
+#ifndef SPI0_CONFIG_IRQ_PRIORITY
+#define SPI0_CONFIG_IRQ_PRIORITY    7
+#endif
+
+// </h> 
+//==========================================================
+
 // </e>
 
 // <e> SPI1_ENABLED - Enable SPI1 instance
 //==========================================================
 #ifndef SPI1_ENABLED
-#define SPI1_ENABLED 0
+#define SPI1_ENABLED 7
 #endif
 // <q> SPI1_USE_EASY_DMA  - Use EasyDMA
  
@@ -1768,7 +1945,7 @@
 // <e> TIMER_ENABLED - nrf_drv_timer - TIMER periperal driver
 //==========================================================
 #ifndef TIMER_ENABLED
-#define TIMER_ENABLED 0
+#define TIMER_ENABLED 1
 #endif
 // <o> TIMER_DEFAULT_CONFIG_FREQUENCY  - Timer frequency if in Timer mode
  
@@ -1784,7 +1961,7 @@
 // <9=> 31.25 kHz 
 
 #ifndef TIMER_DEFAULT_CONFIG_FREQUENCY
-#define TIMER_DEFAULT_CONFIG_FREQUENCY 0
+#define TIMER_DEFAULT_CONFIG_FREQUENCY 4
 #endif
 
 // <o> TIMER_DEFAULT_CONFIG_MODE  - Timer mode or operation
@@ -1804,7 +1981,7 @@
 // <3=> 32 bit 
 
 #ifndef TIMER_DEFAULT_CONFIG_BIT_WIDTH
-#define TIMER_DEFAULT_CONFIG_BIT_WIDTH 0
+#define TIMER_DEFAULT_CONFIG_BIT_WIDTH 3
 #endif
 
 // <o> TIMER_DEFAULT_CONFIG_IRQ_PRIORITY  - Interrupt priority
@@ -1828,14 +2005,14 @@
  
 
 #ifndef TIMER0_ENABLED
-#define TIMER0_ENABLED 0
+#define TIMER0_ENABLED 1
 #endif
 
 // <q> TIMER1_ENABLED  - Enable TIMER1 instance
  
 
 #ifndef TIMER1_ENABLED
-#define TIMER1_ENABLED 0
+#define TIMER1_ENABLED 1
 #endif
 
 // <q> TIMER2_ENABLED  - Enable TIMER2 instance
@@ -4349,7 +4526,7 @@
 // <e> SPI_CONFIG_LOG_ENABLED - Enables logging in the module.
 //==========================================================
 #ifndef SPI_CONFIG_LOG_ENABLED
-#define SPI_CONFIG_LOG_ENABLED 0
+#define SPI_CONFIG_LOG_ENABLED 1
 #endif
 // <o> SPI_CONFIG_LOG_LEVEL  - Default Severity level
  

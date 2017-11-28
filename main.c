@@ -1,5 +1,8 @@
 /**
  * Copyright (c) 2014 - 2017, Nordic Semiconductor ASA
+ *
+ *
+ *
  * 
  * All rights reserved.
  * 
@@ -81,7 +84,17 @@
 #include "nrf_log_default_backends.h"
 
 #include "nrf_delay.h"
+<<<<<<< HEAD
 #include "app_util_platform.h"
+=======
+#include "nrf_drv_timer.h"
+#include "HostSerifImpl.h"
+#include "Invn/EmbUtils/Message.h"
+#include "Invn/EmbUtils/DataConverter.h"
+#include "Invn/Devices/DeviceIcm20948.h"
+#include "Invn/DynamicProtocol/DynProtocol.h"
+#include "Invn/DynamicProtocol/DynProtocolTransportUart.h"
+>>>>>>> b2481f29d624a36977dd7e8740e39be7f7860609
 
 
 #define APP_FEATURE_NOT_SUPPORTED       BLE_GATT_STATUS_ATTERR_APP_BEGIN + 2    /**< Reply when unsupported features are requested. */
@@ -113,6 +126,8 @@
 #define SEC_PARAM_MAX_KEY_SIZE          16                                      /**< Maximum encryption key size. */
 
 #define DEAD_BEEF                       0xDEADBEEF                              /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */
+
+const nrf_drv_timer_t TIMER_TIMESTAMP = NRF_DRV_TIMER_INSTANCE(1);
 
 
 NRF_BLE_GATT_DEF(m_gatt);                                                       /**< GATT module instance. */
@@ -780,6 +795,7 @@ static void advertising_start(bool erase_bonds)
     }
 }
 
+<<<<<<< HEAD
 /* =============== SPI =============== */
 
 static const nrf_drv_spi_t m_spi_master_0 = NRF_DRV_SPI_INSTANCE(0);
@@ -818,41 +834,282 @@ static void init_spi(void)
 }
 
 /* =================================== */
+=======
+/* Invn functions */
+>>>>>>> b2481f29d624a36977dd7e8740e39be7f7860609
 
-/**@brief Function for application main entry.
+#include "Invn/Devices/DeviceIcm20948.h"
+/*
+ * Printer function for IDD message facility
+ */
+
+ /* Define msg level */
+#define MSG_LEVEL INV_MSG_LEVEL_DEBUG
+static void msg_printer(int level, const char * str, va_list ap)
+{
+#ifdef INV_MSG_ENABLE
+	static char out_str[256]; /* static to limit stack usage */
+	unsigned idx = 0;
+	//const char * ptr = out_str;
+	const char * s[INV_MSG_LEVEL_MAX] = {
+		"",    // INV_MSG_LEVEL_OFF
+		"[E] ", // INV_MSG_LEVEL_ERROR
+		"[W] ", // INV_MSG_LEVEL_WARNING
+		"[I] ", // INV_MSG_LEVEL_INFO
+		"[V] ", // INV_MSG_LEVEL_VERBOSE
+		"[D] ", // INV_MSG_LEVEL_DEBUG
+	};
+
+	idx += snprintf(&out_str[idx], sizeof(out_str) - idx, "%s", s[level]);
+	if(idx >= (sizeof(out_str)))
+		return;
+	idx += vsnprintf(&out_str[idx], sizeof(out_str) - idx, str, ap);
+	if(idx >= (sizeof(out_str)))
+		return;
+	idx += snprintf(&out_str[idx], sizeof(out_str) - idx, "\r\n");
+	if(idx >= (sizeof(out_str)))
+		return;
+        printf("%s",out_str);
+//	while(*ptr != '\0') {
+//		uart_putc(LOG_UART_ID, *ptr);
+//		++ptr;
+//	}
+
+#else
+	(void)level, (void)str, (void)ap;
+#endif
+}
+
+/* 
+ * WHOAMI value for 20948
+ */
+static const uint8_t EXPECTED_WHOAMI[] = { 0xEA };
+
+/*
+ * High resolution sleep implementation for Icm20948.
+ * Used at initilization stage. ~100us is sufficient.
+ */
+void inv_icm20948_sleep_us(int us)
+{
+  nrf_delay_us(us);
+}
+/*
+ * Time implementation for Icm20948.
+ */
+uint32_t inv_icm20948_get_time_us(void)
+{
+  NRF_TIMER1->TASKS_CAPTURE[0] = 1;
+  return NRF_TIMER1->CC[0];
+}
+
+/*
+* Check the RC value 
+*/
+static void check_rc(int rc)
+{
+	if(rc == -1) {
+		INV_MSG(INV_MSG_LEVEL_INFO, "BAD RC=%d", rc);
+		while(1);
+	}
+}
+/*
+ * Callback called upon sensor event reception
+ * This function is called in the same function than inv_device_poll()
+ */
+static void sensor_event_cb(const inv_sensor_event_t * event, void * arg)
+{
+  /* arg will contained the value provided at init time */
+    (void)arg;
+    (void)event;
+    /* ... do something with event */
+    printf("vect x : %f y: %f z : %f\n", event->data.acc.vect[0],event->data.acc.vect[1],event->data.acc.vect[2]);
+}
+
+/*
+ * A listener object will handle sensor event
+ */
+
+static inv_sensor_listener_t sensor_listener = {
+        sensor_event_cb, /* callback that will receive sensor events */
+        (void *)0xDEAD   /* some pointer passed to the callback */
+};
+
+/*
+ * States for icm20948 device object
+ */
+static inv_device_icm20948_t device_icm20948;
+static uint8_t dmp3_image[] = {
+#include "Invn/Images/icm20948_img.dmp3a.h"
+};
+
+void mytimestamp (nrf_timer_event_t event_type, void* p_context)
+{
+<<<<<<< HEAD
+    bsp_board_leds_init();
+=======
+}
+
+void my_timestamp_init(void)
+{
+    uint32_t err_code = NRF_SUCCESS;
+    //Configure TIMER_TIMESTAMP for generating simple us TIMESTAMP.
+    nrf_drv_timer_config_t timer_cfg = NRF_DRV_TIMER_DEFAULT_CONFIG;
+    err_code = nrf_drv_timer_init(&TIMER_TIMESTAMP, &timer_cfg, mytimestamp);
+    APP_ERROR_CHECK(err_code);
+
+    nrf_drv_timer_enable(&TIMER_TIMESTAMP);
+}
+
+/*
+ * Example main function
  */
 int main(void)
-{
-    bsp_board_leds_init();
+
+
+ {   
+>>>>>>> b2481f29d624a36977dd7e8740e39be7f7860609
     bool erase_bonds;
 
     // Initialize.
     log_init();
-    timers_init();
-    buttons_leds_init(&erase_bonds);
-    ble_stack_init();
-    gap_params_init();
-    gatt_init();
-    advertising_init();
-    services_init();
-    conn_params_init();
-    peer_manager_init();
+//    timers_init();
+//    buttons_leds_init(&erase_bonds);
+//    ble_stack_init();
+//    gap_params_init();
+//    gatt_init();
+//    advertising_init();
+//    services_init();
+//    conn_params_init();
+//    peer_manager_init();
+//
+//    // Start execution.
+//    NRF_LOG_INFO("Template example started.");
+//    application_timers_start();
+//
+//    advertising_start(erase_bonds);
 
-    // Start execution.
-    NRF_LOG_INFO("Template example started.");
-    application_timers_start();
+    printf("******Begining of the journey******\n");
+    int i = 0;
+    my_timestamp_init();
+    /*
+	 * Setup message facility to see internal traces from IDD
+	 */
+	INV_MSG_SETUP(MSG_LEVEL, msg_printer);
 
-    advertising_start(erase_bonds);
+	/*
+	 * Welcome message
+	 */
+	INV_MSG(INV_MSG_LEVEL_INFO, "###################################");
+	INV_MSG(INV_MSG_LEVEL_INFO, "#          20948 example          #");
+	INV_MSG(INV_MSG_LEVEL_INFO, "###################################");
+      
+     int rc = 0;
+     int error = NRF_SUCCESS;
+      inv_device_t * device; /* just a handy variable to keep the handle to device object */
+     uint8_t whoami = 0xA0;
+       /*
+        * Open serial interface (SPI or I2C) before playing with the device
+        */
+      /* call low level drive initialization here... */
+      printf("Open SPI serial interface\n");
+      inv_host_serif_open(idd_io_hal_get_serif_instance_spi());
+      /*
+       * Create ICM20948 Device
+       * Pass to the driver:
+       * - reference to serial interface object,
+       * - reference to listener that will catch sensor events,
+       */
+      inv_device_icm20948_init(&device_icm20948, idd_io_hal_get_serif_instance_spi(), &sensor_listener, dmp3_image, sizeof(dmp3_image));
+      /*
+       * Simply get generic device handle from Icm20948 Device
+       */
+      device = inv_device_icm20948_get_base(&device_icm20948);
+      /*
+       * Just get the whoami
+       */
+      rc += inv_device_whoami(device, &whoami);
+      check_rc(rc);
+      /* ... do something with whoami */
+      printf("ICM WHOAMI=%02x\n", whoami);
+
+      /*
+	 * Check if WHOAMI value corresponds to any value from EXPECTED_WHOAMI array
+	 */
+	for(i = 0; i < sizeof(EXPECTED_WHOAMI)/sizeof(EXPECTED_WHOAMI[0]); ++i) {
+		if(whoami == EXPECTED_WHOAMI[i])
+			break;
+	}
+        
+	if(i == sizeof(EXPECTED_WHOAMI)/sizeof(EXPECTED_WHOAMI[0])) {
+		printf( "Bad WHOAMI value. Got 0x%02x. Expected 0x%02x.\n", whoami,EXPECTED_WHOAMI[0]);
+		check_rc(-1);
+	}
+
+      /*
+       * Configure and initialize the Icm20948 device
+       */
+      rc += inv_device_setup(device);
+      /*
+       * Now that device is ready, you must call inv_device_poll() function
+       * periodically or upon interrupt.
+       * The poll function will check for sensor events, and notify, if any,
+       * by means of the callback from the listener that was provided on device init.
+       */
+      rc += inv_device_poll(device);
+    /* ... */
+    /*
+   * Start RAW accelerometer and gyroscope sensor at 20 Hz
+   */
+      rc += inv_device_set_sensor_period(device,
+     INV_SENSOR_TYPE_RAW_ACCELEROMETER, 50);
+      rc += inv_device_start_sensor(device,
+      INV_SENSOR_TYPE_RAW_ACCELEROMETER);
+      rc += inv_device_set_sensor_period(device,
+      INV_SENSOR_TYPE_RAW_GYROSCOPE, 50);
+      rc += inv_device_start_sensor(device,
+     INV_SENSOR_TYPE_RAW_GYROSCOPE);
+    /* ... */
+     rc += inv_device_poll(device);
+//      /*
+//       * Stop accelerometer sensor
+//       */
+//      rc += inv_device_stop_sensor(device,
+//      INV_SENSOR_TYPE_RAW_ACCELEROMETER);
+//      rc += inv_device_stop_sensor(device,
+//      INV_SENSOR_TYPE_RAW_GYROSCOPE);
+//      /*
+//       * Shutdown everything.
+//       */
+//      rc += inv_device_cleanup(device);
+//      /*
+//       * Close serial interface link
+//       */
+//      /* call low level drive de-initialization here... */
 
     init_spi();
     // Enter main loop.
     for (;;)
     {
+<<<<<<< HEAD
       NRF_LOG_FLUSH();
 
       bsp_board_led_invert(BSP_BOARD_LED_0);
       nrf_delay_ms(200);
+=======
+        /*
+        if (NRF_LOG_PROCESS() == false)
+        {
+            power_manage();
+        }*/
+
+      /*    rc += inv_device_whoami(device, &whoami);
+      check_rc(rc);
+      printf("ICM WHOAMI=%02x\n", whoami);*/
+//      inv_device_poll(device);
+//      nrf_delay_ms(500);
+>>>>>>> b2481f29d624a36977dd7e8740e39be7f7860609
     }
+    return rc;
 }
 
 
